@@ -1,11 +1,9 @@
-import 'dotenv/config';
 import fs from 'fs';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import morgan from 'morgan';
 import express from 'express';
 import cors from 'cors';
-import fileupload from 'express-fileupload';
 import routes from './routes/app.js';
 
 const app = express();
@@ -26,10 +24,6 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(fileupload({
-  createParentPath: true,
-}));
-
 app.use(cors(corsOptions));
 app.use(morgan('combined', { stream: accessLogStream }));
 app.use(express.json({ limit: '50mb' }));
@@ -42,8 +36,8 @@ app.use((req, res) => {
   res.status(404).send('404 - Página não encontrada');
 });
 
-app.listen(process.env.API_PORT || 3000, () => {
-  console.log(`API running in port ${process.env.API_PORT || 3000}`);
+app.listen(3000, () => {
+  console.log(`API running in port 3000`);
 });
 
 export default app;

@@ -16,10 +16,9 @@ O servidor estará disponível em `http://localhost:3000`
 
 ## Dependências Utilizadas
 
-- Caso deseje instalar as dependencias individualmente.
 
 #### better-sqlite3
-Biblioteca SQLite para Node.js com melhor performance.
+ - (removido) Página de contato (`contato.html`) foi eliminada e todas as referências foram retiradas.
 ```bash
 npm install better-sqlite3
 ```
